@@ -23,7 +23,7 @@ const KundliForm = () => {
   const fetchCoordinates = async (place) => {
  try {
    const response = await axios.get(
-     `https://maps.googleapis.com/maps/api/geocode/json?address=${place}&key=AIzaSyBA1DUu45B8BoMdy0NAdLsYHZaNpTdjuNs`
+     `https://maps.googleapis.com/maps/api/geocode/json?address=${place}&key=GOOGLE_MAPS_API`
    );
    const location = response.data.results[0]?.geometry?.location;
    console.log('Location:', location);  // Log the coordinates
@@ -66,7 +66,7 @@ const KundliForm = () => {
         seconds: 0, // Default seconds to 0, adjust if necessary
         latitude: coordinates.latitude, // Fetched from Google API
         longitude: coordinates.longitude, // Fetched from Google API
-        timezone: 5.5, // Hardcoded timezone, adjust for dynamic if needed
+        timezone: 5.5, // Hardcoded timezone,
         observation_point: 'topocentric',
         ayanamsha: 'lahiri',
         gender: formData.gender,
@@ -74,12 +74,12 @@ const KundliForm = () => {
       };
 
       const response = await axios.post(
-        'https://json.freeastrologyapi.com/planets', // Use actual API endpoint
+        'https://json.freeastrologyapi.com/planets', 
         requestData,
         {
           headers: {
             'Content-Type': 'application/json',
-            'x-api-key': 'LqgQf8Wgw23fF5JFwJFkZ5S7OEqX1Ex68iAyoSYz', // Replace with actual API key
+            'x-api-key': 'YOUR_API_KEY', 
           },
         }
       );
