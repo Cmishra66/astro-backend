@@ -23,7 +23,7 @@ const KundliForm = () => {
   const fetchCoordinates = async (place) => {
     try {
       const response = await axios.get(
-        `https://maps.googleapis.com/maps/api/geocode/json?address=${place}&key=AIzaSyBA1DUu45B8BoMdy0NAdLsYHZaNpTdjuNs`
+        `https://maps.googleapis.com/maps/api/geocode/json?address=${place}&key=GOOGLE_MAPS_API`
       );
       const location = response.data.results[0].geometry.location;
       setCoordinates({
@@ -71,7 +71,7 @@ const KundliForm = () => {
         {
           headers: {
             'Content-Type': 'application/json',
-            'x-api-key': 'LqgQf8Wgw23fF5JFwJFkZ5S7OEqX1Ex68iAyoSYz', // Replace with actual API key
+            'x-api-key': 'YOUR_API', // Replace with actual API key
           },
         }
       );
